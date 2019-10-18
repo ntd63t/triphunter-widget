@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Demo page of the widget</title>
+</head>
+<body>
+  <h1>Demo page of the iframe widget</h1>
+  <iframe id="triphunter_frame" scrolling="yes" style="width: 100%; min-width: 450px; height: 300px; min-height: 300px; margin-top: 10px; margin-bottom: 10px; display: block; border-width: 0px;">
+  </iframe>
+  <script>
+    document.getElementById("triphunter_frame").src="https://widget-stg.triphunter.vn/plans/new?page="+encodeURIComponent(window.location.href)+"&triphunter_pid=4041067017";
+    // document.getElementById("triphunter_frame").src="http://wtf.widget.lvh.me:3000/plans/new?page="+encodeURIComponent(window.location.href)+"&triphunter_pid=4041067017";
+  </script>
+</body>
