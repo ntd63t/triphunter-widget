@@ -4,26 +4,7 @@
 </head>
 <body>
   <h1>Demo page of Triphunter planning widget</h1>
-  <iframe id="triphunter_frame" scrolling="yes" style="width: 100%; min-width: 450px; height: 100%; min-height: 300px; margin-top: 10px; margin-bottom: 10px; display: block; border-width: 0px;">
+  <iframe id="triphunter_frame" scrolling="yes" style="width: 100%; min-width: 450px; height: 100%; min-height: 300px; margin-top: 10px; margin-bottom: 10px; display: block; border-width: 0px;" data-triphunter-pid="4041067017">
   </iframe>
-  <script>
-    var is_safari = navigator.userAgent.indexOf("Safari") > -1;
-    // Chrome has Safari in the user agent so we need to filter (https://stackoverflow.com/a/7768006/1502448)
-    var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
-    if ((is_chrome) && (is_safari)) {is_safari = false;}
-    if (is_safari) {
-      console.log(99999999, document.cookie)
-      // See if cookie exists (https://stackoverflow.com/a/25617724/1502448)
-      if (!document.cookie.match(/^(.*;)?\s*fixed\s*=\s*[^;]+(.*)?$/)) {
-          // Set cookie to maximum (https://stackoverflow.com/a/33106316/1502448)
-          document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
-          // window.location.replace("http://wtf.widget.lvh.me:3000/safari_fix_aid");
-          window.location.replace("https://widget-stg.triphunter.vn/safari_fix_aid");
-      } else {
-        console.log(1111111111, document.cookie)
-      }
-    }
-    // document.getElementById("triphunter_frame").src="http://wtf.widget.lvh.me:3000/plans/new?page="+encodeURIComponent(window.location.href)+"&triphunter_pid=4041067017";
-    document.getElementById("triphunter_frame").src="https://widget-stg.triphunter.vn/plans/new?page="+encodeURIComponent(window.location.href)+"&triphunter_pid=4041067017";
-  </script>
+  <script onload="TripHunter.Widget({'triphunter_pid': '4041067017'});" src="https://stg.triphunter.vn/plan-widget.js" async></script>
 </body>
